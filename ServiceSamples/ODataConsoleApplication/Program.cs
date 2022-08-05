@@ -20,7 +20,7 @@ namespace ODataConsoleApplication
 
             context.SendingRequest2 += new EventHandler<SendingRequest2EventArgs>(delegate (object sender, SendingRequest2EventArgs e)
             {
-                var authenticationHeader = OAuthHelper.GetAuthenticationHeader(useWebAppAuthentication: true);
+                var authenticationHeader = OAuthHelper.GetAuthenticationHeader(useWebAppAuthentication: false);
                 e.RequestMessage.SetHeader(OAuthHelper.OAuthHeader, authenticationHeader);
             });
 
